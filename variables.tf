@@ -21,9 +21,29 @@ variable "hash_key" {
   type        = "string"
 }
 
+variable "hash_key_type" {
+  type        = "string"
+  default     = "S"
+  description = "Hash Key type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data"
+}
+
+
 variable "range_key" {
   description = "The attribute to use as the range key"
   type        = "string"
+}
+
+variable "range_key_type" {
+  type        = "string"
+  default     = "S"
+  description = "Range Key type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data"
+}
+
+
+variable "dynamodb_attributes" {
+  type        = "list"
+  default     = []
+  description = "Additional DynamoDB attributes in the form of a list of mapped values"
 }
 
 variable "ttl_attribute" {
